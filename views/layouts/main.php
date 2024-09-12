@@ -73,6 +73,18 @@ $this->registerLinkTag(['rel' => 'icon', 'type' => 'image/x-icon', 'href' => Yii
               ],
           ],
       ]);
+
+      echo Nav::widget(config: [
+        'options' => ['class' => 'navbar-nav navbar-right'],
+        'items' => [
+            [ 'label' => 'City',
+                'items' => [
+                    ['label' => 'Overzicht', 'url' => ['/city/index', ''] ],
+                    ['label' => 'Voeg toe', 'url' => ['/city/index', ''] ],
+                ],
+          ],
+        ],    
+    ]);
     NavBar::end();
     ?>
 </header>

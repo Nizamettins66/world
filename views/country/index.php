@@ -28,19 +28,44 @@ $this->params['breadcrumbs'][] = $this->title;
             ['class' => 'yii\grid\SerialColumn'],
 
             'Code',
-            'Name',
-            'Continent',
-            'Region',
+            'Name', 
+            
+            [
+                'label' => 'Hoofdstad',
+                'attribute' => 'Capital',
+                'contentOptions' => ['style' => 'width:200px; white-space: normal;'],
+                'format' => 'raw',
+                'value' => function($data) {
+                    return Html::a('Naar hoofdstad', ['/city/index', 'CitySearch[ID]' => $data->Capital]);
+                }
+            ],
+            // 'Population',
+            ['label' => 'Inwoners', 
+            'attribute' => 'Population', 
+            'contentOptions' => ['style' => 'width:200px; white-space: normal;'],],
+            // 'Continent',
+            // 'Region',
+            // 'SurfaceArea',
+            [
+                'label' => 'Oppervlakte',
+                'attribute' => 'SurfaceArea',
+                'format' => 'raw',
+                'value' => function($data) {
+                    return sprintf("%8d k&#13217", $data->SurfaceArea);
+                }
+            ],
             //'IndepYear',
-            //'Population',
+            ['label' => 'Bevolkingsdichtheid','value' => function ($model) {return $model->SurfaceArea > 0 ? round($model->Population / $model->SurfaceArea) : 0;},'contentOptions' => ['style' => 'width:30px; white-space: normal;'],],
             //'LifeExpectancy',
             //'GNP',
             //'GNPOld',
             //'LocalName',
             //'GovernmentForm',
             //'HeadOfState',
-            //'Capital',
-            //'Code2',
+            // 'Hoofdstad',
+            
+            
+            
             [
                 'class' => ActionColumn::className(),
                 'urlCreator' => function ($action, Country $model, $key, $index, $column) {
