@@ -55,7 +55,10 @@ $this->params['breadcrumbs'][] = $this->title;
                 }
             ],
             //'IndepYear',
-            ['label' => 'Bevolkingsdichtheid','value' => function ($model) {return $model->SurfaceArea > 0 ? round($model->Population / $model->SurfaceArea) : 0;},'contentOptions' => ['style' => 'width:30px; white-space: normal;'],],
+            ['label' => 'Bevolkingsdichtheid',
+            'value' => function ($model) 
+            {return $model->SurfaceArea > 0 ? round($model->Population / $model->SurfaceArea) : 0;},
+            'contentOptions' => ['style' => 'width:30px; white-space: normal;'],],
             //'LifeExpectancy',
             //'GNP',
             //'GNPOld',
