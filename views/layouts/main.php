@@ -62,13 +62,16 @@ $this->registerLinkTag(['rel' => 'icon', 'type' => 'image/x-icon', 'href' => Yii
                   'items' => [
                       ['label' => 'Overzicht', 'url' => ['/country/index', ''] ],
                       ['label' => 'Voeg toe', 'url' => ['/country/index', ''] ],
-                      ['label' => 'Europa', 'url' => ['/country/index', 'CountrySearch[Continent]' => 'Europe'] ],
+                      ['label' => 'Europe', 'url' => ['/country/index', 'CountrySearch[Continent]' => 'Europe'] ],
                       ['label' => 'Asia', 'url' => ['/country/index', 'CountrySearch[Continent]' => 'Asia'] ],
                       ['label' => 'North America', 'url' => ['/country/index', 'CountrySearch[Continent]' => 'North America'] ],
                       ['label' => 'South America', 'url' => ['/country/index', 'CountrySearch[Continent]' => 'South America'] ],
                       ['label' => 'Africa', 'url' => ['/country/index', 'CountrySearch[Continent]' => 'Africa'] ],
                       ['label' => 'Antarctica', 'url' => ['/country/index', 'CountrySearch[Continent]' => 'Antarctica'] ],
                       ['label' => 'Oceania', 'url' => ['/country/index', 'CountrySearch[Continent]' => 'Oceania'] ],
+                      ['label' => 'Overzicht', 'url' => ['/country/overzicht', ''] ],
+                      ['label' => 'Overzicht Europe', 'url' => ['/country/overzicht-europe', 'CountrySearch[Continent]' => 'Europe']],
+
                       ],
               ],
           ],
