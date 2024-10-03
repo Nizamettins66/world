@@ -106,5 +106,4 @@ public function getHoofdstad()
 {
 	return $this->hasOne(City::className(), ['ID' => 'Capital']);
 }
-    
 }

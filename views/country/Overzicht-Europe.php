@@ -21,6 +21,8 @@
 <th></th>
 <th>Oppervlakte</th>
 <th></th>
+<th>Taal</th>
+
 </tr>
         <?php
         foreach ($countries as $country) {
@@ -28,8 +30,10 @@
 
             echo "<tr>";
             echo "<td>" . $country->Name . "<td>";
-            echo "<td><a href='http://localhost:8080/city/view?id=" . $country->hoofdstad->ID . "'>" . $country->hoofdstad->Name. "</a><td>";   
+            echo "<td><a href='http://localhost:8080/city/view?id=" . $country->hoofdstad->ID . "'>" . $country->hoofdstad->Name. "</a><td>";
+            // Nizamettin Sari   
             echo "<td>" . number_format($country->SurfaceArea, 0, ',', ' ') . "<td>";
+            echo "<td>" . $country->countrylanguages[0]->Language;
             echo "</tr>";
         }
         ?>
