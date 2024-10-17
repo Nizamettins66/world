@@ -5,14 +5,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-        th {
+        th, td {
             text-align: left;
+            vertical-align: top;
+            padding: 8px;
+        }
+        table {
+            width: 50%;
+            border-spacing:10px;
         }
     </style>
 </head>
 
 <body>
-    <table>
+    <table border="2px">
 
         <tr>
             <th>Naam</th>
@@ -37,7 +43,10 @@
             $length = count($country->countrylanguages);
 
             for ($i = 0; $i < $length; $i++) {
-                echo "<br>" . $country->countrylanguages[$i]->Language;
+                echo $country->countrylanguages[$i]->Language; 
+                echo "(" .  $country->countrylanguages[$i]->Percentage . "%)"; 
+             
+            echo "<br>";
             }
             echo "</td>";
             echo "</tr>";
@@ -45,5 +54,4 @@
         ?>
     </table>
 </body>
-
 </html>
