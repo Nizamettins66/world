@@ -156,5 +156,5 @@ public function actionOverzichtEurope() {
         'countries' => $countries,
     ]);
 }
-} 
+}
 
