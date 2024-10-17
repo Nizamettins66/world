@@ -97,7 +97,9 @@ class Country extends \yii\db\ActiveRecord
      */
     public function getCountrylanguages()
     {
-        return $this->hasMany(Countrylanguage::class, ['CountryCode' => 'Code']);
+        return $this->hasMany(Countrylanguage::class, ['CountryCode' => 'Code'])
+        ->orderBy(['Percentage' => SORT_DESC]); 
+        // nizamettin sari
     }
 
     // models/Country.php
@@ -106,4 +108,6 @@ public function getHoofdstad()
 {
 	return $this->hasOne(City::className(), ['ID' => 'Capital']);
 }
+
+
 }

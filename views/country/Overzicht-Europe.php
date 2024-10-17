@@ -11,8 +11,15 @@
             padding: 8px;
         }
         table {
-            width: 50%;
+            width: 75%;
             border-spacing:10px;
+        }
+        .op {
+            text-align: right;
+            vertical-align: top;
+        }
+        .op2 {
+            text-align: right;
         }
     </style>
 </head>
@@ -25,7 +32,7 @@
             <th></th>
             <th>Hoofdstad</th>
             <th></th>
-            <th>Oppervlakte</th>
+            <th class= "op">Oppervlakte</th>
             <th></th>
             <th>Taal</th>
 
@@ -37,14 +44,14 @@
             echo "<tr>";
             echo "<td>" . $country->Name . "<td>";
             echo "<td><a href='http://localhost:8080/city/view?id=" . $country->hoofdstad->ID . "'>" . $country->hoofdstad->Name . "</a><td>";
-            echo "<td>" . number_format($country->SurfaceArea, 0, ',', ' ') . "<td>";
+            echo "<td class= op2>" . number_format($country->SurfaceArea, 0, ',', ' ') . "<td>";
             // echo "<td>" . $country->countrylanguages[0]->Language . "<td>";
             echo "<td>";
             $length = count($country->countrylanguages);
 
             for ($i = 0; $i < $length; $i++) {
                 echo $country->countrylanguages[$i]->Language; 
-                echo "(" .  $country->countrylanguages[$i]->Percentage . "%)"; 
+                echo " (" .  $country->countrylanguages[$i]->Percentage . "%)"; 
              
             echo "<br>";
             }
